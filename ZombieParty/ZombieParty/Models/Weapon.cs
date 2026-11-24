@@ -10,15 +10,17 @@ namespace ZombieParty.Models
         [StringLength(250, MinimumLength = 2)]
         public string Name { get; set; }
 
-        [Display(Name = "Weapon's Description")]
+        [Display(Name = "Description")]
         [MaxLength(2500)]
         [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
 
+        [Display(Name = "Force")]
         [Range(0, Double.MaxValue)]
         public decimal Force { get; set; }
 
-        [Range(0, 100000, ErrorMessage = "The {0} must be between {1} and {2}")]
+        [Display(Name = "Price")]
+        [Range(0, 100000, ErrorMessage = "ErrorPrice")]
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
@@ -30,6 +32,7 @@ namespace ZombieParty.Models
         [DataType(DataType.ImageUrl)]
         public string? Image { get; set; }
 
+        [Display(Name = "Total Qty Available")]
         public int Qty { get; set; }
 
         [Display(Name = "Qty Bought")]
